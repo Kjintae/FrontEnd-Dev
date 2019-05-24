@@ -1,6 +1,6 @@
 # FrontEnd-Dev (Javascript & React)
 
-react 설치 과정
+React 설치 과정
 
 1.Node.js / npm, yarn 설치하기
 - Node.js download -> https://nodejs.org/ko/download/
@@ -22,3 +22,9 @@ react 설치 과정
 - 4-2 npm start or yarn start
 
 ------------------------------------------------------------------------------------------------------------------------------------------
+
+Javascript function
+
+1. 즉시 실행 함수 표현(IIFE, Immediately Invoked Function Expression) : 정의되자마자 즉시 실행되는 함수
+- (function () {
+ )();

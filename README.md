@@ -1,4 +1,4 @@
-# FrontEnd-Dev
+# FrontEnd-Dev (Javascript & React)
 
 react 설치 과정
 

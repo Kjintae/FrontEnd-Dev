@@ -1,15 +1,15 @@
 # FrontEnd-Dev (Javascript & React)
 
-React 설치 과정
+## React 설치 과정
 
-1.Node.js / npm, yarn 설치하기
-- Node.js download -> https://nodejs.org/ko/download/
-- npm download -> terminal or cmd 'npm install'
-- Yarn download -> https://yarnpkg.com/lang/en/
+### 1.Node.js / npm, yarn 설치하기
+ - Node.js download -> https://nodejs.org/ko/download/
+ - npm download -> terminal or cmd 'npm install'
+ - Yarn download -> https://yarnpkg.com/lang/en/
 
 2.Node.js / npm, yarn 설치 확인
-- Node.js version 확인 -> 'node -v'
-- npm version 확인 -> 'npm -v'
+ - Node.js version 확인 -> 'node -v'
+ - npm version 확인 -> 'npm -v'
 - Yarn version 확인 -> yarn --version (cmd 창에서 확인 가능하나 vscode 에서는 확인이 안되고있음.)
 
 3.create-react-app 프로젝트 설치 및 생성
@@ -26,5 +26,7 @@ React 설치 과정
 Javascript function
 
 1. 즉시 실행 함수 표현(IIFE, Immediately Invoked Function Expression) : 정의되자마자 즉시 실행되는 함수
-- (function () {
- )();
+ ``` 
+ (function () {
+     statements
+  })(); ```

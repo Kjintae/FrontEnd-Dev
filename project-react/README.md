@@ -19,6 +19,7 @@
 - 4-1 cd (프로젝트 이름)
 - 4-2 npm start or yarn start
 
+----------------------------------------------------------------------------------------------------------------------------------------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -1,4 +1,4 @@
-#Javascritp study
+# Javascritp study
 
 ## Javascript function
 

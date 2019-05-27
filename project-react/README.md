@@ -21,6 +21,19 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
+## props 와 state
+
+### props
+ - props는 부모 컴포넌트가 자식 컴포넌트에게 주는 값.
+ - 자식 컴포넌트에서는 props를 받아오기만 하고, 받아온 props 를 직접 수정할 수 없다.
+ - 자식이 받아온 props 값은 ``` this. ``` 키워드를 통하여 조회 할 수 있다.
+ - defaultProps : props 를 빠트리거나 특정상황에 일부러 비워야 할 때 사용. props 를 기본값으로 설정하는것임.
+ 
+### state
+ - state 는 컴포넌트 내부에서 선언하며 내부에서 값을 변경할 수 있다.
+ - this.setState : state 에 있는 값을 바꾸기 위해 사용.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

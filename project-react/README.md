@@ -34,12 +34,31 @@
  
  ### this.setState  : state 에 있는 값을 바꾸기 위해 사용.
  -setState에 객체 대신 함수를 전달하기
+
  -기존코드
- ``` this.setState({
-       number: this.state.number + 1
-    }) ```
-    
-   위의 코드는 큰 문제는 아니지만, 굳이 또 this.state를 조회하고 있다.
+ ``` 
+this.setState({
+ number: this.state.number + 1
+})
+  ```
+ 위의 코드는 큰 문제는 아니지만, 굳이 또 this.state를 조회하고 있다.
+
+ -조금 더 나은 문법
+ ``` 
+ this.setState(
+  (state) => ({
+    number: state.number
+   })
+);
+ ```
+ 
+ -비구조화 활당 문법
+ ```
+this.setState(
+ ({ number }) => ({
+    number: number + 1  
+ })
+);
  
 ----------------------------------------------------------------------------------------------------------------------------------------
 

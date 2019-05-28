@@ -38,7 +38,7 @@
  -기존코드
  ``` 
 this.setState({
- number: this.state.number + 1
+  number: this.state.number + 1
 })
   ```
  위의 코드는 큰 문제는 아니지만, 굳이 또 this.state를 조회하고 있다.
@@ -48,7 +48,7 @@ this.setState({
  this.setState(
   (state) => ({
     number: state.number
-   })
+  })
 );
  ```
  
@@ -59,7 +59,18 @@ this.setState(
     number: number + 1  
  })
 );
- 
+```
+위의 코드를 간단히 정리하자면
+```
+const { number } = this.state;
+this.setState({
+  number: number +1
+})
+```
+로 코드를 덜 작성할 수 있다. (이 코드를 사용하자.)
+
+
+
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 

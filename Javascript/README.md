@@ -41,4 +41,26 @@
  ```
  const add =(a,b) => a + b;
  console.log(add(1,2)); => 3
+ ```
+ 
+ ### 4. 생성자 함수
+ ```
+ //생성자 함수
+ function Person(name) {
+  this.name =  name;
+ }
+ 
+ // 생성자 함수 호출
+ var me = new Person('Lee');
+ console.log(me); => {name : "Lee"}
+ 
+ // new 연산자와 함께 생성자 함수를 호출하지 않으면 생성자 함수로 동작하지 않는다.
+ var you = Person('Kim');
+ console.log(you); => undefined
+ ```
+ 
+ - 생성자 함수는 말 그대로 객체를 생성하는 역할을 한다.
+ - 기존 함수에 ##new## 연사자를 붙여서 호출하면 해당 함수는 생성자 함수로 동작한다.
+ - 일반적으로 생성자 함수명은 첫문자를 대문자로 기술하여 혼란을 방지한다.
+ 
  

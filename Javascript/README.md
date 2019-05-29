@@ -63,4 +63,26 @@
  - 기존 함수에 ##new## 연사자를 붙여서 호출하면 해당 함수는 생성자 함수로 동작한다.
  - 일반적으로 생성자 함수명은 첫문자를 대문자로 기술하여 혼란을 방지한다.
  
- 
+ ### 5. 객체 리터럴 방식과 생성자 함수 방식의 차이.
+ ```
+ // 객체 리터럴 방식
+ var foo = {
+  name: 'foo',
+  gender: 'male'
+ }
+
+console.dir(foo);
+
+// 생성자 함수 방식
+function Person(name,gender) {
+ this.name = name;
+ this.gender = gender;
+}
+
+var me = new Person('Lee', 'male);
+console.dir(me);
+```
+
+- 객체 리터럴 방식과 생성자 함수 방식의 차이는 **프로토타입 객체**에 있다.
+- 객체 리터럴 방식의 경우, 생성된 객체의 프로토타입 객체는 **Object.prototype**이다.
+- 생성자 함수 방식의 경우, 생성된 객체의 프로토타입 객체는 **Person.prototype**이다.

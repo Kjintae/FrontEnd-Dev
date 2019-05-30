@@ -9,7 +9,6 @@ for (var i = 0; i < 4; i++) {
 }
 
 let count = 0;
-
 while (count < 10) {
     let input = prompt('숫자를 입력하세요'); 
     let inputArray = '';
@@ -38,7 +37,6 @@ while (count < 10) {
         console.error('중복된 숫자가 있습니다.');
         break;
       }
-      
     }
   
     if (strike === 4) {
@@ -48,7 +46,6 @@ while (count < 10) {
       console.error('시도 횟수를 초과하셨습니다.');
     } else {
       console.info(count+'번 째'+inputArray.join('') + ': ' + strike + '스트라이크 ' + ball + '볼');
-
       // .join(구분자: 배열의 항목들을 구분자를 기준으로 합친 새 문자열을 반환함.
     }
  }

@@ -37,3 +37,13 @@ let arrayOne = [];
 let arrayTwo = arrayOne.concat(1);
 console.log(arrayOne === arrayTwo); // false
 ```
+
+### 3. 사용한 LifeCycle API
+- shouldComponentUpdate API : 컴포넌트가 리렌더링을 할 지 말지 정해준다. 이게 따로 구현되지 않으면 언제나 true를 반환하는데, 이를 구현하는 경우에는 업데이트에 영향을 끼치는 조건을 return 해주면 된다.
+컴포넌트를 최적화하는 작업에서 매우 유용하게 사용된다.
+```
+shouldComponentUpdate(nectProps, nextState) {
+  // return false 하면 업데이트를 안함.
+  // return this.props.checked !== nextProps.checked
+  return true;
+}

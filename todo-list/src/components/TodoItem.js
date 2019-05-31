@@ -12,7 +12,7 @@ class TodoItem extends Component {
         // id: todo 의 고유 아이디
         // onToggle: 체크박스를 키고 끄는 함수
         // onRemove: 아이템을 삭제시키는 함수
-        const { text, checked, id, onToggle, onRemove } = this.props;
+        const { text, checked, id, color, onToggle, onRemove } = this.props;
 
         console.log(id);
         return(
@@ -21,7 +21,7 @@ class TodoItem extends Component {
                     e.stopPropagation(); // onToggle 이 실행되지 않도록함
                     onRemove(id)}
                 }>&times;</div>
-                <div className={`todo-text ${checked ? 'checked' : ''}`}>
+                <div style={{color}} className={`todo-text ${checked ? 'checked' : ''}`}>
                     <div>{text}</div>
                 </div>
             {

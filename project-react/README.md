@@ -82,3 +82,49 @@ this.setState({
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
+## 함수형 컴포넌트
+
+### 함수형 컴포넌트는 어떤 상황에서 사용하는가?
+
+- **state** sk **라이플사키을API** 를 전혀 사용하지 않을 때, 그리고 해당 컴포넌트는 자체 기능은 따로 없고 **props 가 들어가면 뷰가 나온다는 것** 을 명시하기 위해 사용.
+
+- 리액트 16에서는 함수형 컴포넌트가 클래스 컴포넌트 보다 성능이 조금 빨라졌다고 페이스북 개발자가 언급했습니다.
+
+- ES5 형식
+```
+import React from 'react';
+
+function Hello(props) {
+ return (
+  <div>Hello {props.name}</div>
+ );
+}
+
+export default Hello;
+```
+
+- ES6 화살표 함수 형식
+```
+impot Reacr from 'react';
+
+const Hello = (props) => {
+ retun (
+  <div>Hello {props.name}</div>
+ );
+}
+
+export default Hello;
+```
+
+- 비구조화 할당 문법
+```
+import React from 'react';
+
+const Hello =({name}) => {
+ retun (
+  <div>Hello {name}</div>
+ );
+}
+
+export default Hello;
+

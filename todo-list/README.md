@@ -1,68 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## TodoList
 
-## Available Scripts
+### 1. 상태관리하기
 
-In the project directory, you can run:
+- 컴포넌트들은 부모를 통하여 대화를 해야합니다.
+- 내부 컴포넌트 끼리는 대화하지 않는다.
+- Form, TodoItemList 에있는 인풋값과 변경시키는 함수 , todos 목록과 변경시키는 함수를 props로 App.js 에 전달해야 한다.
+- 다른 컴포넌트끼리 직접 데이터를 전달하는 것은 **ref** 를 사용하여할 수 있지만 이것은 정말 비효율적인 방법이다. (리액트에서 일종의 안티패턴!!)
 
-### `npm start`
+### 2. App.js
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 비구조화 할당
+```
+const {
+  handleChange,
+  handleCreate,
+  handleKeyPress
+} = this;
+```
+-> 이런식으로 비구조화 할당을 할 경우, this.handleChange 등 이런식으로 계속 this 룰 붙여줘야 하는 작업을 생략할 수 있다.
+   이 작업은 만약에 원치 않으면 생략하고 this를 직접 붙여줘도 무방함.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### 2-1. App.js hadleCreate()
 
-### `npm test`
+- 자바스크립트로 보통 배열안에 새 데이터를 집어넣을땐 주로 push를 사용하는데 리액트 state 에서 배열을 다룰 때는 **절대로** push를 사용하면 안됨 
+```
+let arrayOne = [];
+let arrayTwo = arrayOne;
+arrayOne.push(1);
+console.log(arrayOne === arrayTwo); // true
+```
+-> push 를 통하여 데이터를 추가하면 배열에 값이 추가되긴 하지만 가르키고 있는 배열은 똑같기 때문에 비교할 수 없습니다. 최적화를 할 수 없음!!
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-push 대신 **concat** 을 사용하자!!
+```
+let arrayOne = [];
+let arrayTwo = arrayOne.concat(1);
+console.log(arrayOne === arrayTwo); // false
+```
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### 3. 사용한 LifeCycle API
+- **shouldComponentUpdate** API : 컴포넌트가 리렌더링을 할 지 말지 정해준다. 이게 따로 구현되지 않으면 언제나 true를 반환하는데, 이를 구현하는 경우에는 업데이트에 영향을 끼치는 조건을 return 해주면 된다.
+컴포넌트를 최적화하는 작업에서 매우 유용하게 사용된다.
+```
+shouldComponentUpdate(nectProps, nextState) {
+  // return false 하면 업데이트를 안함.
+  // return this.props.checked !== nextProps.checked
+  return true;
+}

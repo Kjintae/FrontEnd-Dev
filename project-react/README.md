@@ -82,72 +82,49 @@ this.setState({
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
+## 함수형 컴포넌트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 함수형 컴포넌트는 어떤 상황에서 사용하는가?
 
-## Available Scripts
+- **state** sk **라이프사이클API** 를 전혀 사용하지 않을 때, 그리고 해당 컴포넌트는 자체 기능은 따로 없고 **props 가 들어가면 뷰가 나온다는 것** 을 명시하기 위해 사용.
 
-In the project directory, you can run:
+- 리액트 16에서는 함수형 컴포넌트가 클래스 컴포넌트 보다 성능이 조금 빨라졌다고 페이스북 개발자가 언급했습니다.
 
-### `npm start`
+- ES5 형식
+```
+import React from 'react';
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+function Hello(props) {
+ return (
+  <div>Hello {props.name}</div>
+ );
+}
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+export default Hello;
+```
 
-### `npm test`
+- ES6 화살표 함수 형식
+```
+impot Reacr from 'react';
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+const Hello = (props) => {
+ retun (
+  <div>Hello {props.name}</div>
+ );
+}
 
-### `npm run build`
+export default Hello;
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 비구조화 할당 문법
+```
+import React from 'react';
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+const Hello =({name}) => {
+ retun (
+  <div>Hello {name}</div>
+ );
+}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+export default Hello;
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

@@ -42,7 +42,8 @@ class Hero extends Character {
             logMessage('죽었습니다. 레벨' + this.lev + '에서 모험이 끝납니다. F5를 눌러 다시 시작하세요', 'red');
             battle = false;
             gameover = true;
-        }
+        } 
+        
     }
     attack(target) {
         logMessage(this.name + '님이 ' + target.name + '을 공격합니다');
@@ -53,6 +54,7 @@ class Hero extends Character {
     }
     gainXp(target) {
         logMessage('전투에서 승리하여 ' + target.xp + '의 경험치를 얻습니다', 'blue');
+        this.heal(this.hp);
         this.xp += target.xp;
         if (this.xp > 100 + 10 * this.lev) {
             this.lev++;
@@ -60,6 +62,12 @@ class Hero extends Character {
             this.hp = 100 + this.lev * 10;
             this.xp -= 10 * this.lev + 100;
         }
+    }
+    heal(health) { //체력회복 메소드
+        console.log('전달받은 hp::'+health);
+        health = this.hp + 30;
+        logMessage(this.name+ '님의 체력이'+ health + '상승 되었습니다.', 'red');
+        this.hp += health;
     }
 };
 
@@ -89,7 +97,8 @@ logMessage(hero.name + '님이 모험을 시작합니다. 어느 정도까지 �
 while (!gameover) {
   var monster = makeMonster();
   logMessage(monster.name + '을 마주쳤습니다. 전투가 시작됩니다', 'green');
-  battle = true;   while(battle) {
+  battle = true;   
+  while(battle) {
     hero.attack(monster);
     if (monster.hp > 0) {
       monster.attack(hero);

@@ -15,6 +15,7 @@ class Character {
         this.name = name;
         this.hp = hp;
         this.att = att;
+        //def 추가하기
     }
     attacked(damage) {
         this.hp -= damage;

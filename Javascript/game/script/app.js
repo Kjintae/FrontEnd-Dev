@@ -1,4 +1,4 @@
-var TurnGame = (function() {
+var TurnGame = (function() { //es6 문법으로 구현해보기.
     var instance;
     var initiate = function(heroName) {
       var hero = {

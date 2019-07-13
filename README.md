@@ -2,7 +2,7 @@
 
 - React
 
-- Javascript
+- Javascript. 
 
 - Study
 

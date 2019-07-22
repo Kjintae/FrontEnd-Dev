@@ -29,10 +29,11 @@ const suqared = array.map(suqare);
 console.log('map:'+suqared);
 
 
-//splice : 특정 항목을 제거할 때 사용
+//splice : 특정 항목을 제거할 때 사용, 유용하게 쓰인다
 const number = [10, 20, 30, 40];
 const index = number.indexOf(30);
-number.splice(index,1); // 첫번 쨰 파라미터는 어떤 인덱스부터 지울지를 의미, 두 번째 파라미터는 그 인덱스부터 몇개를 지울지를 의미
+number.splice(index,1, 50); // 첫번 쨰 파라미터는 어떤 인덱스부터 지울지를 의미(배열의 변경을 시작하는 인덱스), 
+                        // 두 번째 파라미터는 그 인덱스부터 몇개를 지울지를 의미(배열에서 제거를 할 요소의 수)
 console.log('splice::'+number);
 
 //shift : 첫번 째 원소를 배열에서 추출.(추출하는 과정에서 배열에서 해당원소는 사라짐.)

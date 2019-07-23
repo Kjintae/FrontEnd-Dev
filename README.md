@@ -4,7 +4,7 @@
 
 - Javascript. 
 
-- Study
+- Study.
 
 - Work
 

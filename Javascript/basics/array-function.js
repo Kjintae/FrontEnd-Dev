@@ -67,3 +67,49 @@ function countBiggerThanTen(numbers) {
 
 const count = countBiggerThanTen([1, 2, 3, 5, 10, 20, 30, 40, 50, 60]);
 console.log(count);
+
+// 파리미터의 기본값
+
+// ES5 문법
+function add(x,y) {
+    x = x || 0;  // 매개변수 x에 인수를 할당하지 않은 경우, 기본값 0 을 할당함.
+    y = y || 0;  // 매개변수 y에 인수를 할당하지 않은 경우, 기본값 0 을 할당함.
+
+    return x + y;
+}
+
+console.log(add());
+console.log(add(1,2));
+
+// ES6 문법
+
+const add2 = (x = 0, y = 0) => {
+    return x + y;
+}
+
+console.log(add2());
+console.log(add2(1,2));
+
+// rest 파라미터
+
+// rest 파라미터라는 기능을 이용해서 나머지 아규먼트를 배열로 사용할 수 있음.
+// arguments 와는 다르게 배열이다.
+
+const add3 = (a, b, ...rest) => {
+    console.log(a); //5
+    console.log(b); //3
+    console.log(rest); // [9, 2, 1, 6]
+}
+add3(5, 3, 9, 2, 1, 6);
+
+//Map
+
+const m1 = new Map([['a', 1], ['b', 2]]);
+
+console.log(m1);
+
+const m2 = new Map();
+m2.set('a', 1);
+m2.set('b', 2);
+
+console.log(m2);

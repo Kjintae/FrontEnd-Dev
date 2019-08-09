@@ -17,7 +17,7 @@ for(let i = 0; i < array.length; i++) {
     suqared.push(array[i] * array[i]);
 } */
 
-/* // forEach
+/* // forEach22222222222222222
 array.forEach(n =>{
     suqared.push(n * n);
 }); */
